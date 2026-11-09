@@ -1324,15 +1324,16 @@ export default function OffSpecAnalyzer() {
               <p className="text-on-dark-muted text-sm leading-relaxed mb-4">
                 Axarat gives fresh produce importers real-time visibility into
                 their shipments, so problems show up before the rejection does.
-                Reply to this email or visit{" "}
+                Visit{" "}
                 <a
-                  href="https://axarat.com"
+                  href="https://axarat.com/#contact"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline text-accent font-bold hover:brightness-125"
                 >
                   axarat.com
-                </a>
+                </a>{" "}
+                to see how it works
               </p>
               <a
                 href="https://axarat.com/#contact"
