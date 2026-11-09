@@ -562,7 +562,7 @@ function generateReportText(
   const lines = [
     line,
     "     OFF-SPEC ARRIVAL INSPECTION REPORT",
-    "     Powered by Premium Fields",
+    "     Powered by Axarat",
     line,
     "",
     `Date/Time  : ${dateStr}  |  ${timeStr}`,
@@ -601,8 +601,8 @@ function generateReportText(
   }
 
   lines.push(line);
-  lines.push("Premium Fields — Helping fresh fruit buyers reduce");
-  lines.push("risk and protect margins.  Visit premiumfields.com");
+  lines.push("Axarat — Real-time visibility for fresh produce importers.");
+  lines.push("Start your 15-day pilot: axarat.com/#contact");
   lines.push(line);
 
   return lines.join("\n");
@@ -619,7 +619,7 @@ function StepIndicator({ step }: { step: 1 | 2 }) {
           <div
             className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-black border-2 transition-all ${
               step >= 1
-                ? "bg-[#1a472a] text-white border-[#1a472a]"
+                ? "bg-[#0b0f1a] text-white border-[#0b0f1a]"
                 : "bg-gray-100 text-gray-400 border-gray-300"
             }`}
           >
@@ -627,19 +627,19 @@ function StepIndicator({ step }: { step: 1 | 2 }) {
           </div>
           <span
             className={`text-sm font-semibold hidden sm:block ${
-              step === 1 ? "text-[#1a472a]" : "text-gray-400"
+              step === 1 ? "text-[#0b0f1a]" : "text-gray-400"
             }`}
           >
             Shipment Details
           </span>
-          <span className={`text-sm font-semibold sm:hidden ${step === 1 ? "text-[#1a472a]" : "text-gray-400"}`}>
+          <span className={`text-sm font-semibold sm:hidden ${step === 1 ? "text-[#0b0f1a]" : "text-gray-400"}`}>
             Details
           </span>
         </div>
 
         <div className="flex-1 h-1 bg-gray-200 rounded-full overflow-hidden">
           <div
-            className={`h-full bg-[#1a472a] rounded-full transition-all duration-700 ease-out ${
+            className={`h-full bg-[#0b0f1a] rounded-full transition-all duration-700 ease-out ${
               step >= 2 ? "w-full" : "w-0"
             }`}
           />
@@ -649,7 +649,7 @@ function StepIndicator({ step }: { step: 1 | 2 }) {
           <div
             className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-black border-2 transition-all ${
               step === 2
-                ? "bg-[#1a472a] text-white border-[#1a472a]"
+                ? "bg-[#0b0f1a] text-white border-[#0b0f1a]"
                 : "bg-gray-100 text-gray-400 border-gray-300"
             }`}
           >
@@ -657,12 +657,12 @@ function StepIndicator({ step }: { step: 1 | 2 }) {
           </div>
           <span
             className={`text-sm font-semibold hidden sm:block ${
-              step === 2 ? "text-[#1a472a]" : "text-gray-400"
+              step === 2 ? "text-[#0b0f1a]" : "text-gray-400"
             }`}
           >
             Inspection Data
           </span>
-          <span className={`text-sm font-semibold sm:hidden ${step === 2 ? "text-[#1a472a]" : "text-gray-400"}`}>
+          <span className={`text-sm font-semibold sm:hidden ${step === 2 ? "text-[#0b0f1a]" : "text-gray-400"}`}>
             Inspection
           </span>
         </div>
@@ -767,37 +767,32 @@ export default function OffSpecAnalyzer() {
   return (
     <div className="min-h-screen flex flex-col bg-white">
       {/* ── Navbar ── */}
-      <nav className="bg-[#1a472a] text-white px-4 sm:px-6 py-3 flex items-center justify-between shadow-lg z-20 relative">
+      <nav className="bg-[#0b0f1a] text-white px-4 sm:px-6 py-3 flex items-center justify-between shadow-lg z-20 relative">
         <div className="flex items-center">
           <img
             src="/logo.png"
-            alt="Premium Fields"
-            className="h-8 w-auto"
+            alt="Axarat"
+            className="h-8 w-auto mr-2.5"
             onError={(e) => {
               e.currentTarget.style.display = "none";
-              const span = e.currentTarget.nextElementSibling as HTMLElement;
-              if (span) span.style.display = "block";
             }}
           />
-          <span
-            className="text-white font-black text-base tracking-tight hidden"
-            style={{ display: "none" }}
-          >
-            PREMIUM FIELDS
+          <span className="text-white font-black text-base tracking-tight">
+            Axarat
           </span>
         </div>
-        <span className="text-xs sm:text-sm font-bold text-green-200 tracking-wide uppercase">
+        <span className="text-xs sm:text-sm font-bold text-slate-300 tracking-wide uppercase">
           Off-Spec Arrival Analyzer
         </span>
       </nav>
 
       {/* ── Hero ── */}
-      <div className="bg-[#1a472a] text-white px-4 pb-8 pt-6 sm:pt-8 sm:pb-10 text-center">
+      <div className="bg-[#0b0f1a] text-white px-4 pb-8 pt-6 sm:pt-8 sm:pb-10 text-center">
         <div className="max-w-2xl mx-auto">
           <h1 className="text-2xl sm:text-3xl font-black mb-2.5 leading-tight">
             Does This Fruit Meet Your Arrival Standards?
           </h1>
-          <p className="text-green-200 text-sm sm:text-base max-w-lg mx-auto leading-relaxed">
+          <p className="text-slate-300 text-sm sm:text-base max-w-lg mx-auto leading-relaxed">
             Enter your arrival inspection data below and get an instant Accept
             or Reject decision — with full justification.
           </p>
@@ -813,10 +808,10 @@ export default function OffSpecAnalyzer() {
         {step === 1 && (
           <div className="space-y-5">
             <div className="bg-gray-50 rounded-2xl p-5 sm:p-6 border border-gray-200 shadow-sm">
-              <p className="text-xs font-black tracking-widest text-[#f97316] uppercase mb-1">
+              <p className="text-xs font-black tracking-widest text-[#007a6b] uppercase mb-1">
                 Step 1 of 2
               </p>
-              <h2 className="text-lg font-bold text-[#1a472a] mb-5">
+              <h2 className="text-lg font-bold text-[#0b0f1a] mb-5">
                 Shipment Details
               </h2>
 
@@ -837,8 +832,8 @@ export default function OffSpecAnalyzer() {
                           }}
                           className={`py-3.5 px-2 rounded-xl border-2 text-sm font-bold transition-all active:scale-[0.97] ${
                             fruitType === ft
-                              ? "bg-[#1a472a] text-white border-[#1a472a] shadow-sm"
-                              : "bg-white text-gray-700 border-gray-200 hover:border-[#1a472a] hover:text-[#1a472a]"
+                              ? "bg-[#0b0f1a] text-white border-[#0b0f1a] shadow-sm"
+                              : "bg-white text-gray-700 border-gray-200 hover:border-[#0b0f1a] hover:text-[#0b0f1a]"
                           }`}
                         >
                           <span className="block text-xl mb-0.5">
@@ -867,8 +862,8 @@ export default function OffSpecAnalyzer() {
                           onClick={() => setVariety(v)}
                           className={`py-3 px-2 rounded-xl border-2 text-xs font-bold transition-all active:scale-[0.97] leading-tight ${
                             variety === v
-                              ? "bg-[#1a472a] text-white border-[#1a472a] shadow-sm"
-                              : "bg-white text-gray-700 border-gray-200 hover:border-[#1a472a] hover:text-[#1a472a]"
+                              ? "bg-[#0b0f1a] text-white border-[#0b0f1a] shadow-sm"
+                              : "bg-white text-gray-700 border-gray-200 hover:border-[#0b0f1a] hover:text-[#0b0f1a]"
                           }`}
                         >
                           {v}
@@ -886,7 +881,7 @@ export default function OffSpecAnalyzer() {
                   <select
                     value={origin}
                     onChange={(e) => setOrigin(e.target.value)}
-                    className="w-full border-2 border-gray-200 rounded-xl px-3 py-3 text-sm bg-white focus:outline-none focus:border-[#1a472a] transition-colors appearance-none cursor-pointer"
+                    className="w-full border-2 border-gray-200 rounded-xl px-3 py-3 text-sm bg-white focus:outline-none focus:border-[#0b0f1a] transition-colors appearance-none cursor-pointer"
                   >
                     <option value="">Select country / region…</option>
                     {[
@@ -918,8 +913,8 @@ export default function OffSpecAnalyzer() {
                           onClick={() => setBuyerType(bt)}
                           className={`py-3.5 px-2 rounded-xl border-2 text-sm font-bold transition-all active:scale-[0.97] ${
                             buyerType === bt
-                              ? "bg-[#f97316] text-white border-[#f97316] shadow-sm"
-                              : "bg-white text-gray-700 border-gray-200 hover:border-[#f97316] hover:text-[#f97316]"
+                              ? "bg-[#00e5c8] text-[#0b0f1a] border-[#00e5c8] shadow-sm"
+                              : "bg-white text-gray-700 border-gray-200 hover:border-[#00e5c8] hover:text-[#0b0f1a]"
                           }`}
                         >
                           {bt}
@@ -934,7 +929,7 @@ export default function OffSpecAnalyzer() {
             <button
               onClick={handleStartInspection}
               disabled={!step1Valid}
-              className="w-full bg-[#f97316] hover:bg-orange-600 active:bg-orange-700 disabled:bg-gray-200 disabled:text-gray-400 disabled:cursor-not-allowed text-white font-black py-4 rounded-2xl text-base transition-all shadow-sm active:scale-[0.98]"
+              className="w-full bg-[#00e5c8] hover:brightness-95 active:brightness-90 disabled:bg-gray-200 disabled:text-gray-400 disabled:cursor-not-allowed text-[#0b0f1a] font-black py-4 rounded-2xl text-base transition-all shadow-sm active:scale-[0.98]"
             >
               Start Inspection →
             </button>
@@ -958,7 +953,7 @@ export default function OffSpecAnalyzer() {
                   setResults([]);
                   setDecision(null);
                 }}
-                className="text-[#1a472a] text-sm font-semibold hover:underline flex items-center gap-1"
+                className="text-[#0b0f1a] text-sm font-semibold hover:underline flex items-center gap-1"
               >
                 ← Back
               </button>
@@ -973,7 +968,7 @@ export default function OffSpecAnalyzer() {
                   .map((tag) => (
                     <span
                       key={tag}
-                      className="bg-green-50 text-[#1a472a] border border-green-200 text-xs font-semibold px-2 py-0.5 rounded-full whitespace-nowrap"
+                      className="bg-slate-100 text-[#0b0f1a] border border-slate-200 text-xs font-semibold px-2 py-0.5 rounded-full whitespace-nowrap"
                     >
                       {tag}
                     </span>
@@ -984,10 +979,10 @@ export default function OffSpecAnalyzer() {
             <div className="bg-gray-50 rounded-2xl p-5 sm:p-6 border border-gray-200 shadow-sm">
               <div className="flex items-start justify-between mb-1">
                 <div>
-                  <p className="text-xs font-black tracking-widest text-[#f97316] uppercase mb-1">
+                  <p className="text-xs font-black tracking-widest text-[#007a6b] uppercase mb-1">
                     Step 2 of 2
                   </p>
-                  <h2 className="text-lg font-bold text-[#1a472a]">
+                  <h2 className="text-lg font-bold text-[#0b0f1a]">
                     Inspection Data
                   </h2>
                 </div>
@@ -1009,7 +1004,7 @@ export default function OffSpecAnalyzer() {
               {/* Progress bar */}
               <div className="w-full h-1.5 bg-gray-200 rounded-full mb-5 overflow-hidden">
                 <div
-                  className="h-full bg-[#1a472a] rounded-full transition-all duration-400 ease-out"
+                  className="h-full bg-[#0b0f1a] rounded-full transition-all duration-400 ease-out"
                   style={{ width: `${(filledCount / 9) * 100}%` }}
                 />
               </div>
@@ -1033,7 +1028,7 @@ export default function OffSpecAnalyzer() {
                       {/* Header row */}
                       <div className="flex items-start justify-between gap-2 mb-3">
                         <div className="flex items-start gap-2 min-w-0 flex-1">
-                          <span className="text-xs font-black text-[#1a472a] bg-green-50 rounded-md w-6 h-6 flex items-center justify-center shrink-0 mt-0.5">
+                          <span className="text-xs font-black text-[#0b0f1a] bg-slate-100 rounded-md w-6 h-6 flex items-center justify-center shrink-0 mt-0.5">
                             {idx + 1}
                           </span>
                           <div className="min-w-0">
@@ -1085,7 +1080,7 @@ export default function OffSpecAnalyzer() {
                               ? "border-green-200 bg-green-50 focus:border-green-400"
                               : status === "fail"
                               ? "border-red-200 bg-red-50 focus:border-red-400"
-                              : "border-gray-200 bg-white focus:border-[#1a472a]"
+                              : "border-gray-200 bg-white focus:border-[#0b0f1a]"
                           }`}
                         />
                       ) : (
@@ -1125,7 +1120,7 @@ export default function OffSpecAnalyzer() {
             <button
               onClick={handleGenerateReport}
               disabled={filledCount < 9}
-              className="w-full bg-[#f97316] hover:bg-orange-600 active:bg-orange-700 disabled:bg-gray-200 disabled:text-gray-400 disabled:cursor-not-allowed text-white font-black py-4 rounded-2xl text-base transition-all shadow-sm active:scale-[0.98]"
+              className="w-full bg-[#00e5c8] hover:brightness-95 active:brightness-90 disabled:bg-gray-200 disabled:text-gray-400 disabled:cursor-not-allowed text-[#0b0f1a] font-black py-4 rounded-2xl text-base transition-all shadow-sm active:scale-[0.98]"
             >
               {filledCount < 9
                 ? `${9 - filledCount} field${9 - filledCount > 1 ? "s" : ""} remaining…`
@@ -1138,14 +1133,14 @@ export default function OffSpecAnalyzer() {
         {decision && results.length > 0 && (
           <div ref={reportRef} className="mt-8 animate-report-in">
             <div className="flex items-center justify-between mb-4">
-              <h2 className="text-xl font-black text-[#1a472a]">
+              <h2 className="text-xl font-black text-[#0b0f1a]">
                 Arrival Inspection Report
               </h2>
               <div className="flex gap-1.5">
                 {[fruitType, origin].filter(Boolean).map((tag) => (
                   <span
                     key={tag}
-                    className="bg-green-50 text-[#1a472a] border border-green-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+                    className="bg-slate-100 text-[#0b0f1a] border border-slate-200 text-xs font-semibold px-2 py-0.5 rounded-full"
                   >
                     {tag}
                   </span>
@@ -1287,7 +1282,7 @@ export default function OffSpecAnalyzer() {
                           {r.failExplanation}
                         </p>
                         <div className="bg-white rounded-lg p-3 border border-red-100 ml-5">
-                          <p className="text-xs font-black text-[#1a472a] uppercase tracking-wide mb-1">
+                          <p className="text-xs font-black text-[#0b0f1a] uppercase tracking-wide mb-1">
                             Recommended Action
                           </p>
                           <p className="text-xs text-gray-700 leading-relaxed">
@@ -1303,7 +1298,7 @@ export default function OffSpecAnalyzer() {
             {/* ── Download Button ── */}
             <button
               onClick={handleDownload}
-              className="w-full bg-[#1a472a] hover:bg-green-900 active:bg-green-950 text-white font-black py-4 rounded-2xl text-base mb-4 flex items-center justify-center gap-2.5 transition-all shadow-sm active:scale-[0.98]"
+              className="w-full bg-[#0b0f1a] hover:bg-slate-800 active:bg-slate-900 text-white font-black py-4 rounded-2xl text-base mb-4 flex items-center justify-center gap-2.5 transition-all shadow-sm active:scale-[0.98]"
             >
               <svg
                 className="w-5 h-5 shrink-0"
@@ -1322,28 +1317,36 @@ export default function OffSpecAnalyzer() {
             </button>
 
             {/* ── CTA Box ── */}
-            <div className="bg-[#1a472a] text-white rounded-2xl p-5 sm:p-6 mb-5 border-l-4 border-[#f97316] shadow-sm">
-              <p className="font-black text-[#f97316] text-base sm:text-lg mb-2">
+            <div className="bg-[#0b0f1a] text-white rounded-2xl p-5 sm:p-6 mb-5 border-l-4 border-[#00e5c8] shadow-sm">
+              <p className="font-black text-[#00e5c8] text-base sm:text-lg mb-2">
                 Need help building an arrival inspection protocol?
               </p>
-              <p className="text-green-100 text-sm leading-relaxed">
-                Premium Fields helps fresh fruit buyers implement systems that
+              <p className="text-slate-200 text-sm leading-relaxed mb-4">
+                Axarat helps fresh fruit buyers implement systems that
                 reduce rejections by up to 60%. Reply to this email or visit{" "}
                 <a
-                  href="https://premiumfields.com"
+                  href="https://axarat.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="underline text-orange-300 font-bold hover:text-orange-200"
+                  className="underline text-[#00e5c8] font-bold hover:brightness-125"
                 >
-                  premiumfields.com
+                  axarat.com
                 </a>
               </p>
+              <a
+                href="https://axarat.com/#contact"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-[#00e5c8] text-[#0b0f1a] font-black text-sm px-5 py-3 rounded-xl hover:brightness-95 active:scale-[0.98] transition-all"
+              >
+                Start your 15-day pilot →
+              </a>
             </div>
 
             {/* ── Start Over ── */}
             <button
               onClick={handleReset}
-              className="w-full border-2 border-gray-300 text-gray-600 font-bold py-3.5 rounded-2xl text-sm hover:border-[#1a472a] hover:text-[#1a472a] transition-all active:scale-[0.98]"
+              className="w-full border-2 border-gray-300 text-gray-600 font-bold py-3.5 rounded-2xl text-sm hover:border-[#0b0f1a] hover:text-[#0b0f1a] transition-all active:scale-[0.98]"
             >
               Start New Inspection
             </button>
@@ -1352,23 +1355,22 @@ export default function OffSpecAnalyzer() {
       </main>
 
       {/* ── Footer ── */}
-      <footer className="mt-auto bg-[#1a472a] border-t border-green-900 px-4 py-6 text-center">
+      <footer className="mt-auto bg-[#0b0f1a] border-t border-slate-800 px-4 py-6 text-center">
         <img
           src="/logo.png"
-          alt="Premium Fields"
+          alt="Axarat"
           className="h-7 w-auto mx-auto mb-2 opacity-80"
           onError={(e) => {
             e.currentTarget.style.display = "none";
           }}
         />
-        <p className="text-xs text-green-300 leading-relaxed">
+        <p className="text-xs text-slate-400 leading-relaxed">
           Powered by{" "}
-          <span className="font-black text-white">Premium Fields</span> —
-          Helping fresh fruit buyers reduce risk and protect margins
+          <span className="font-black text-white">Axarat</span> —
+          Real-time visibility for fresh produce importers
         </p>
-        <p className="text-xs text-green-700 mt-1">
-          &copy; {new Date().getFullYear()} Premium Fields. All rights
-          reserved.
+        <p className="text-xs text-slate-500 mt-1">
+          &copy; {new Date().getFullYear()} Axarat. All rights reserved.
         </p>
       </footer>
     </div>

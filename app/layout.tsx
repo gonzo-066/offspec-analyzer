@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Off-Spec Arrival Analyzer | Premium Fields",
+  title: "Off-Spec Arrival Analyzer | Axarat",
   description:
     "Instant Accept or Reject decisions for fresh fruit arrivals — with full justification, claim guidance, and downloadable reports.",
 };
