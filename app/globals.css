@@ -1,5 +1,23 @@
 @import "tailwindcss";
 
+@theme {
+  --color-navy: #0B1424;        /* page background */
+  --color-ocean: #102640;       /* cards / panels */
+  --color-graphite: #273449;    /* borders, inputs */
+  --color-accent: #35C8E8;      /* cyan: accents, highlights, secondary button */
+  --color-ice: #F3F7FB;
+  --color-on-dark: oklch(0.98 0.004 240);       /* main text */
+  --color-on-dark-muted: oklch(0.75 0.03 250);  /* secondary text */
+  --color-line-dark: oklch(1 0 0 / 0.1);        /* borders on dark */
+  --color-primary: #3478F6;     /* links */
+  --color-success: oklch(0.72 0.14 160);
+  --color-warning: oklch(0.8 0.14 75);
+  --color-danger: oklch(0.577 0.245 27);
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
 @keyframes fadeSlideUp {
   from {
     opacity: 0;
@@ -26,10 +44,88 @@
              pulseOnce 0.6s 0.4s ease-in-out forwards;
 }
 
+html {
+  color-scheme: dark;
+}
+
 body {
-  background-color: #ffffff;
-  color: #171717;
-  font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+  background: #0B1424;
+  color: var(--color-on-dark);
+  font-family: var(--font-sans);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+}
+
+.bg-hero {
+  background: linear-gradient(180deg, #0B1424, #102640);
+}
+
+.bg-accent-gradient {
+  background: linear-gradient(90deg, #3478F6, #35C8E8);
+}
+
+.text-accent-gradient {
+  background: linear-gradient(90deg, #3478F6, #35C8E8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@layer components {
+  .card {
+    background: #102640;
+    border: 1px solid oklch(1 0 0 / 0.1);
+    border-radius: 0.75rem;
+    box-shadow:
+      0 1px 2px oklch(0.18 0.03 258 / 0.04),
+      0 8px 24px -12px oklch(0.18 0.03 258 / 0.12);
+  }
+
+  .btn-primary {
+    background: linear-gradient(90deg, #3478F6, #35C8E8);
+    color: #fff;
+    font-weight: 700;
+    border-radius: 0.375rem;
+  }
+  .btn-primary:hover {
+    filter: brightness(1.1);
+  }
+  .btn-primary:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    filter: none;
+  }
+
+  .btn-secondary {
+    background: transparent;
+    border: 1px solid #35C8E8;
+    color: #35C8E8;
+    border-radius: 0.375rem;
+  }
+  .btn-secondary:hover {
+    background: color-mix(in oklab, #35C8E8 10%, transparent);
+  }
+
+  .input {
+    background: #0B1424;
+    border: 1px solid #273449;
+    color: var(--color-on-dark);
+    border-radius: 0.375rem;
+  }
+  .input:focus {
+    border-color: #35C8E8;
+    outline: none;
+  }
+  .input::placeholder {
+    color: var(--color-on-dark-muted);
+    opacity: 0.6;
+  }
 }
 
 /* Remove number input spinners for cleaner look */
