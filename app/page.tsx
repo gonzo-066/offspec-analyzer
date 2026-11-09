@@ -1322,8 +1322,9 @@ export default function OffSpecAnalyzer() {
                 Need help building an arrival inspection protocol?
               </p>
               <p className="text-slate-200 text-sm leading-relaxed mb-4">
-                Axarat helps fresh fruit buyers implement systems that
-                reduce rejections by up to 60%. Reply to this email or visit{" "}
+                Axarat gives fresh produce importers real-time visibility into
+                their shipments, so problems show up before the rejection does.
+                Reply to this email or visit{" "}
                 <a
                   href="https://axarat.com"
                   target="_blank"
